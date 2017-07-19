@@ -2,24 +2,16 @@ const path = require( 'path' );
 const webpack = require( 'webpack' );
 const setup = require( './setup' );
 
+module.exports = () => {
+  const isProd = process.env && process.env.production;
+  console.log( "Is Production:", isProd ? 'Yes' : 'No' );
 
-module.exports = env => {
-  const isProd = env && env.production;
-
-  return {
+  const config = {
     context: path.resolve( __dirname, '../src' ),
     entry: path.resolve( __dirname, '../src/views/Root.jsx' ),
     output: {
       path: path.resolve( __dirname, '../dist' ),
       filename: 'js/[name].[hash].min.js',
-    },
-    devServer: {
-      contentBase: path.resolve( __dirname, '../dist' ),
-      port: process.env.PORT || 3000,
-      historyApiFallback: true,
-      hot: !isProd,
-      inline: !isProd,
-      compress: isProd,
     },
     devtool: !isProd && 'eval',
     module: {
@@ -61,4 +53,17 @@ module.exports = env => {
     },
     plugins: setup( isProd ),
   };
+
+  if ( !isProd ) {
+    config.devServer = {
+      contentBase: path.resolve( __dirname, '../dist' ),
+      port: process.env.PORT || 3000,
+      historyApiFallback: true,
+      hot: !isProd,
+      inline: !isProd,
+      compress: isProd,
+    };
+  }
+
+  return config;
 }
