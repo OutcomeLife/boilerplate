@@ -11,7 +11,7 @@ module.exports = env => {
     entry: path.resolve( __dirname, '../src/views/Root.jsx' ),
     output: {
       path: path.resolve( __dirname, '../dist' ),
-      filename: 'js/bundle.min.js',
+      filename: 'js/[name].[hash].min.js',
     },
     devServer: {
       contentBase: path.resolve( __dirname, '../dist' ),

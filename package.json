@@ -45,6 +45,7 @@
     "json-loader": "^0.5.4",
     "node-sass": "^4.5.3",
     "path": "^0.12.7",
+    "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.6",
     "postcss-smart-import": "^0.7.5",
     "precss": "^2.0.0",
