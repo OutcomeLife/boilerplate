@@ -12,7 +12,7 @@
     "url": "git+https://github.com/OutcomeLife/boilerplate.git"
   },
   "author": "Outcome.Life",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/OutcomeLife/boilerplate/issues"
   },
