@@ -19,7 +19,11 @@ module.exports = () => {
         {
           test: /\.jsx?$/,
           exclude: /node-modules/,
-          use: 'babel-loader',
+          loader: 'babel-loader',
+          options: {
+            plugins: ['lodash'],
+            presets: [['env', { modules: false, targets: { node: 4 } }]]
+          }
         },
         {
           test: /\.json$/,
@@ -27,7 +31,7 @@ module.exports = () => {
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+          use: [ 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ],
         },
         {
           test: /\.(sass|scss)$/,
@@ -39,7 +43,6 @@ module.exports = () => {
           ],
         }
       ],
-
     },
     resolve: {
       alias: {
@@ -49,21 +52,18 @@ module.exports = () => {
         constants: path.resolve( __dirname, '../src/constants' ),
         static: path.resolve( __dirname, '../src/static' ),
       },
-      extensions: ['.js', '.jsx'],
+      extensions: [ '.js', '.jsx' ],
     },
     plugins: setup( isProd ),
-  };
-
-  if ( !isProd ) {
-    config.devServer = {
+    devServer: {
       contentBase: path.resolve( __dirname, '../dist' ),
       port: process.env.PORT || 3000,
       historyApiFallback: true,
       hot: !isProd,
       inline: !isProd,
       compress: isProd,
-    };
-  }
+    }
+  };
 
   return config;
 }

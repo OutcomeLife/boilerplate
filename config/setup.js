@@ -6,6 +6,7 @@ const Dashboard = require('webpack-dashboard/plugin');
 const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
+const LodashModuleReplacementPlugin = require( 'lodash-webpack-plugin' );
 
 const babel = require('./babel');
 
@@ -27,7 +28,9 @@ module.exports = isProd => {
           require('autoprefixer')({ browsers: ['last 3 version'] })
         ]
       }
-    })
+    }),
+    new LodashModuleReplacementPlugin(),
+    new ExtractText('styles.[hash].css'),
   ];
 
   if (isProd) {
@@ -36,7 +39,6 @@ module.exports = isProd => {
     plugins.push(
       new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
       new webpack.optimize.UglifyJsPlugin({}),
-      new ExtractText('styles.[hash].css'),
       new SWPrecache({
         filename: 'service-worker.js',
         navigateFallback: 'index.html',
