@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Routes from '../Routes.jsx';
-import Navbar from '../Navbar';
+import { Navbar } from 'views';
 
 class App extends Component {
   componentDidMount() {

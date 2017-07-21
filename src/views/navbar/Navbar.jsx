@@ -1,6 +1,7 @@
 import './navbar.scss';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import config from 'config';
 
 class Navbar extends Component {
   render() {
@@ -8,7 +9,7 @@ class Navbar extends Component {
       <nav className="navbar">
         <div className="navbar-logo">
           <Link to="/">
-            <h1>Boilerplate</h1>
+            <h1>{config.name}</h1>
           </Link>
         </div>
 
