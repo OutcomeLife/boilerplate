@@ -1,4 +1,4 @@
 export default {
-  name: 'InternMatch',
+  name: 'Boilerplate',
   theme: 'base',
 };
