@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Routes from '../Routes.jsx';
-import { Navbar } from 'views';
+import { Navbar, ThemeProvider } from 'views';
 
 class App extends Component {
   componentDidMount() {
@@ -10,10 +10,10 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <ThemeProvider theme="base">
         <Navbar />
         <Routes />
-      </main>
+      </ThemeProvider>
     );
   }
 }

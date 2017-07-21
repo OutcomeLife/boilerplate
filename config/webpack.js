@@ -58,7 +58,7 @@ module.exports = () => {
       contentBase: path.resolve( __dirname, '../dist' ),
       port: process.env.PORT || 3000,
       historyApiFallback: true,
-      hot: true,
+      hot: !isProd,
       inline: !isProd,
       compress: isProd,
     }
