@@ -31,7 +31,7 @@ module.exports = () => {
         },
         {
           test: /\.css$/,
-          use: [ 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ],
+          use: [ 'style-loader', 'css-loader', 'sass-loader' ],
         },
         {
           test: /\.(sass|scss)$/,
@@ -39,7 +39,6 @@ module.exports = () => {
             'style-loader',
             'css-loader',
             'sass-loader',
-            'postcss-loader',
           ],
         }
       ],
@@ -59,7 +58,7 @@ module.exports = () => {
       contentBase: path.resolve( __dirname, '../dist' ),
       port: process.env.PORT || 3000,
       historyApiFallback: true,
-      hot: !isProd,
+      hot: true,
       inline: !isProd,
       compress: isProd,
     }
