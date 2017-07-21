@@ -6,12 +6,13 @@ module.exports = {
   ],
   env: {
     development: {
-      plugins: []
+      plugins: ["transform-class-properties"]
     },
     production: {
       plugins: ["transform-react-remove-prop-types"],
     }
   },
   plugins: [
+    "transform-class-properties"
   ],
 };

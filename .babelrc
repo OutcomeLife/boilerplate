@@ -2,16 +2,17 @@
   "presets": [
     "es2015",
     "react",
-    "stage-1"
+    "stage-1",
   ],
   "env": {
     "development": {
-      "plugins": []
+      "plugins": ["transform-class-properties"]
     },
     "production": {
       "plugins": ["transform-react-remove-prop-types"]
     }
   },
   "plugins": [
+    "transform-class-properties"
   ]
 }

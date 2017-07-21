@@ -22,7 +22,7 @@ module.exports = () => {
           loader: 'babel-loader',
           options: {
             plugins: ['lodash'],
-            presets: [['env', { modules: false, targets: { node: 4 } }]]
+            presets: [['env', { modules: false, targets: { node: 7 } }]]
           }
         },
         {
