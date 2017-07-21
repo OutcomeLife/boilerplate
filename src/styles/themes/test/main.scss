@@ -1,0 +1,11 @@
+$navbar-height: 100px;
+$navbar-background: #9C27B0;
+$navbar-border: #7B1FA2;
+
+.theme.theme-test {
+  .navbar {
+    height: $navbar-height;
+    background: $navbar-background;
+    border-bottom: 5px solid $navbar-border;
+  }
+}

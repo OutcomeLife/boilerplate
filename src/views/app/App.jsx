@@ -1,3 +1,4 @@
+import config from 'config';
 import React, { Component } from 'react';
 import Routes from '../Routes.jsx';
 import { Navbar, ThemeProvider } from 'views';
@@ -10,7 +11,7 @@ class App extends Component {
 
   render() {
     return (
-      <ThemeProvider theme="base">
+      <ThemeProvider theme={config.theme}>
         <Navbar />
         <Routes />
       </ThemeProvider>

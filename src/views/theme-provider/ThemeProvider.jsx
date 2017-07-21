@@ -1,3 +1,4 @@
+import 'styles/themes/loader.scss';
 import React, { Component } from 'react';
 import { node, string } from 'prop-types';
 
@@ -8,9 +9,9 @@ class ThemeProvider extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, theme } = this.props;
     return (
-      <div>
+      <div className={`theme theme-${theme}`}>
         {children}
       </div>
     );
