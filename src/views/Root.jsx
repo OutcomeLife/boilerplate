@@ -6,7 +6,6 @@ import store from 'views/store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from 'views';
 
-
 const Root = (
   <Provider store={store}>
     <Router>

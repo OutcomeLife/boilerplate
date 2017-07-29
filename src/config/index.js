@@ -1,4 +1,1 @@
-export default {
-  name: 'Boilerplate',
-  theme: 'base',
-};
+export default {};
